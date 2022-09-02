@@ -1,0 +1,71 @@
+﻿@model ArticleViewModel
+
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 mb-5 rounded-3 border border-5 border-dark" style="background-color: aliceblue">
+    <h3 class="mb-3 text-sm-center font-monospace fw-bolder p-2">Makale Ekle</h3>
+    <form class="row g-3" asp-area="Admin" asp-controller="Article" asp-action="Add" method="post" enctype="multipart/form-data">
+        <div class="mb-3">
+            <label asp-for="Article.Title" class="form-label">Makale Başlığı</label>
+            <input asp-for="Article.Title" class="form-control"/>
+            <span asp-validation-for="Article.Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Article.Content" class="form-label">Makale İçeriği</label>
+            <textarea asp-for="Article.Content" id="editor" class="form-control"></textarea>
+            <span asp-validation-for="Article.Content" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Article.CategoryId">Kategori</label> 
+            <select class="form-control" asp-for="Article.CategoryId" asp-items="@(new SelectList(Model.Categories, "Id", "Name"))">
+            <option disabled selected>--Kategori Seçiniz--</option>
+            </select>
+            <span asp-validation-for="Article.CategoryId" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Article.ThumbnailFile" class="form-label">Thumbnail</label>
+            <input asp-for="Article.ThumbnailFile" id="thumbnail" name="file" class="form-control" />
+            <span asp-validation-for="Article.ThumbnailFile" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Article.Date" class="form-label">Tarih</label>
+            <input asp-for="Article.Date" type="datetime-local" class="form-control" />
+            <span asp-validation-for="Article.Date" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success col-md-2 mx-auto mb-3" onclick="return ValidateInput()">Ekle</button>
+        <a asp-area="Admin" asp-controller="Article" asp-action="Index" class="btn btn-info col-md-2 mx-auto mb-3">Listeye Dön</a>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        //<partial name="_ArticleScriptsPartial"/>
+        <partial name="_ValidationScriptsPartial"/>
+    }
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+        });
+
+        function ValidateInput() {
+            if (document.getElementById("thumbnail").value=="") {
+                Swal.fire({
+                    icon: 'error',
+                    title: 'Lütfen thumbnail resmi yükleyiniz...',
+                    text: 'Bir hata oluştu!'
+                });
+                return false;
+            }
+            return true;
+        }
+    </script>
+}
+

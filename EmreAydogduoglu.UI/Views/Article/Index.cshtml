@@ -1,0 +1,27 @@
+﻿@model ArticleListViewModel
+@{
+    Layout = "_ArticleLayout";
+}
+
+<div class="row pb-3">
+    @foreach(var article in Model.Articles)
+    {
+        <div class="col-lg-4 col-md-6">
+            <div class="row p-2">
+                <div class="col-12 p-1" style="border:1px solid #008cba; border-radius: 5px;">
+                    <div class="card">
+                        <img src="~/assets/img/article/@article.ThumbnailName" class="card-img-top rounded"/>
+                        <div class="card-header">
+                            <h4 class="text-black">@article.Title</h4>
+                        </div>
+                    </div>
+                    <div>
+                        <a asp-controller="Article" asp-action="Detail" class="btn btn-primary form-control" asp-route-id="@article.Id">
+                            Oku
+                        </a>
+                    </div>
+                </div> 
+            </div>
+        </div>
+    }
+</div>

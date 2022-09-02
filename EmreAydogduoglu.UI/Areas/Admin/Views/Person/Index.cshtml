@@ -1,0 +1,31 @@
+﻿@model PersonViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <table class="table mt-5 table-striped">
+        <thead class="table-dark">
+            <tr>
+                <th>Adı</th>
+                <th>Soyadı</th>
+                <th>Email</th>
+                <th>Ünvan</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>@Model.Person.FirstName</td>
+                <td>@Model.Person.LastName</td>
+                <td>@Model.Person.Email</td>
+                <td>@Model.Person.Title</td>
+                <td><a class="btn btn-info btn-sm" asp-area="Admin" asp-controller="Person" asp-action="Update" asp-route-id="@Model.Person.Id"><i class="bi bi-pencil-square"></i> Düzenle</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+

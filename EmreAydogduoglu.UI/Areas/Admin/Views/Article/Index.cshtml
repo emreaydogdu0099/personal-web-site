@@ -1,0 +1,43 @@
+﻿@model ArticleListViewModel
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-danger">Makale Listesi</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-area="Admin" asp-controller="Article" asp-action="Add" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> &nbsp; Makale Ekle
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table mt-3 table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>Makale Adı</th>
+            <th>Makale İçeriği</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var article in Model.Articles)
+        {
+            <tr>
+                <td>@article.Title</td>
+                <td>@article.Content.Substring(0,4)</td>
+                <td><a class="btn btn-info btn-sm" asp-area="Admin" asp-controller="Article" asp-action="Update" asp-route-id="@article.Id"><i class="bi bi-pencil-square"></i> Düzenle</a></td>
+                <td><a class="btn btn-danger btn-sm" asp-area="Admin" asp-controller="Article" asp-action="Delete" asp-route-id="@article.Id"><i class="bi bi-trash3"></i> Sil</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,26 @@
+﻿@model CategoryViewModel
+
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 mb-5 rounded-3 border border-5 border-dark" style="background-color: aliceblue">
+    <h3 class="mb-3 text-sm-center font-monospace fw-bolder p-2">Kategori Ekle</h3>
+    <form class="row g-3" asp-area="Admin" asp-controller="Category" asp-action="Add" method="post">
+        <div class="mb-3">
+            <label asp-for="Category.Name" class="form-label">Kategori Adı</label>
+            <input asp-for="Category.Name" class="form-control"/>
+            <span asp-validation-for="Category.Name" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success col-md-2 mx-auto mb-3">Ekle</button>
+        <a asp-area="Admin" asp-controller="Category" asp-action="Index" class="btn btn-info col-md-2 mx-auto mb-3">Listeye Dön</a>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
+

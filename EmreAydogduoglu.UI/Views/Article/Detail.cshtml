@@ -1,0 +1,15 @@
+﻿@model ArticleByIdViewModel
+
+@{
+    Layout = "_ArticleLayout";
+}
+
+
+<div class="container mt-5">
+    <div class="mb-3 text-sm-center text-danger article-title">@Model.Article.Title</div>
+    <div class="article-content">@Html.Raw(@Model.Article.Content)</div>
+</div>
+
+
+
+

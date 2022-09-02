@@ -1,0 +1,14 @@
+﻿@model SkillListViewModel
+
+<section class="resume-section" id="skills">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Beceriler</h2>
+        @foreach (var skill in Model.Skills)
+        {
+            <div class="progress w-100">
+                <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="@skill.Point" aria-valuemin="0" aria-valuemax="100" style="width: @skill.Point%;">@skill.Name</div>
+            </div>
+            <br/>
+        }
+    </div>
+</section>

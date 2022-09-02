@@ -1,0 +1,18 @@
+﻿@model EducationListViewModel
+
+<section class="resume-section" id="education">
+    <div class="resume-section-content">
+        <h2 class="mb-5">Eğitim Bilgileri</h2>
+        @foreach (var education in Model.Educations)
+        {
+            <div class="d-flex flex-column flex-md-row justify-content-between mb-5">
+                <div class="flex-grow-1">
+                    <h3 class="mb-0">@education.Name</h3>
+                    <div class="subheading mb-3">@education.FacultyName</div>
+                    <div>@education.DepartmanName</div>
+                </div>
+                <div class="flex-shrink-0"><span class="text-primary">@education.StartDate.Year - @education.FinishDate.Year</span></div>
+            </div>
+        }
+    </div>
+</section>

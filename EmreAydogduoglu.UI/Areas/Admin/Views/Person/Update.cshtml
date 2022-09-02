@@ -1,0 +1,79 @@
+﻿@model PersonViewModel
+
+@{
+    ViewData["Title"] = "Güncelle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 bg-info mb-5 rounded-3">
+    <h3 class="mb-3 text-sm-center text-danger font-monospace fw-bolder p-2">Kişisel Bilgileri Düzenle</h3>
+    <form class="row g-3" asp-area="Admin" asp-controller="Person" asp-action="Update" method="post" enctype="multipart/form-data">
+        <div class="mb-3 col-6">
+            <label asp-for="Person.FirstName" class="form-label">Adı</label>
+            <input asp-for="Person.FirstName" type="" class="form-control" />
+            <span asp-validation-for="Person.FirstName" class="text-danger"></span>
+        </div>
+        <div class="mb-3 col-6">
+            <label asp-for="Person.LastName" class="form-label">Soyadı</label>
+            <input asp-for="Person.LastName" type="text" class="form-control" />
+            <span asp-validation-for="Person.LastName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Person.Address" class="form-label">Adresi</label>
+            <input asp-for="Person.Address" type="text" class="form-control" />
+            <span asp-validation-for="Person.Address" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Person.Email" class="form-label">Email</label>
+            <input asp-for="Person.Email" type="email" class="form-control" />
+            <span asp-validation-for="Person.Email" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Person.Title" class="form-label">Ünvanı</label>
+            <input asp-for="Person.Title" type="text" class="form-control" />
+            <span asp-validation-for="Person.Title" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Person.About" class="form-label">Hakkında</label>
+            <textarea asp-for="Person.About" rows="10" class="form-control" ></textarea>
+            <span asp-validation-for="Person.About" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            @if (Model.Person.ImageName == "")
+            {
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2 d-block" src="~/assets/img/person/profile.jpg" width="150px" asp-append-version="true" alt="User" />
+            }
+            else
+            {
+                <img class="img-fluid img-profile rounded-circle mx-auto mb-2 d-block" src="~/assets/img/person/@Model.Person.ImageName" width="150px" asp-append-version="true" alt="Emre Aydoğduoğlu" />
+            }
+            <label asp-for="Person.ImageFile" class="form-label mt-2">Fotoğraf</label>
+            <input class="form-control" asp-for="Person.ImageFile" name="file">
+            <span asp-validation-for="Person.ImageFile" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Person.CvFile" class="form-label">Cv</label>
+            <input asp-for="Person.CvFile" name="file2" class="form-control" />
+            <span asp-validation-for="Person.CvFile" class="text-danger"></span>
+        </div>
+        <input type="hidden" asp-for="Person.Id"/>
+        <button type="submit" class="btn btn-success col-md-1 mx-auto mb-3">Güncelle</button>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+    <script>
+        tinymce.init({
+            selector: 'textarea',
+            plugins: 'a11ychecker advcode casechange export formatpainter image editimage linkchecker autolink lists checklist media mediaembed pageembed permanentpen powerpaste table advtable tableofcontents tinycomments tinymcespellchecker',
+            toolbar: 'a11ycheck addcomment showcomments casechange checklist code export formatpainter image editimage pageembed permanentpen table tableofcontents',
+            toolbar_mode: 'floating',
+            tinycomments_mode: 'embedded',
+            tinycomments_author: 'Author name',
+        });
+    </script>
+}
+

@@ -1,0 +1,44 @@
+﻿@model SkillListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-danger">Beceri Listesi</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-area="Admin" asp-controller="Skill" asp-action="Add" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> &nbsp; Beceri Ekle
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table mt-5 table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>Beceri Adı</th>
+            <th>Beceri Puanı</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var skill in Model.Skills)
+        {
+            <tr>
+                <td>@skill.Name</td>
+                <td>@skill.Point</td>
+                <td><a class="btn btn-info btn-sm" asp-area="Admin" asp-controller="Skill" asp-action="Update" asp-route-id="@skill.Id"><i class="bi bi-pencil-square"></i> Düzenle</a></td>
+                <td><a class="btn btn-danger btn-sm" asp-area="Admin" asp-controller="Skill" asp-action="Delete" asp-route-id="@skill.Id"><i class="bi bi-trash3"></i> Sil</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>
+

@@ -1,0 +1,31 @@
+﻿@model SocialViewModel
+
+@{
+    ViewData["Title"] = "Güncelle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 bg-info mb-5 rounded-3">
+    <h3 class="mb-3 text-sm-center text-danger font-monospace fw-bolder p-2">Sosyal Medya Hesabını Düzenle</h3>
+    <form class="row g-3" asp-area="Admin" asp-controller="Social" asp-action="Update" method="post">
+        <div class="mb-3">
+            <label asp-for="Social.IconName" class="form-label">Sosyal Medya İconu</label>
+            <input asp-for="Social.IconName" type="text" class="form-control"/>
+            <span asp-validation-for="Social.IconName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Social.Link" class="form-label">Sosyal Medya Linki</label>
+            <input asp-for="Social.Link" class="form-control">
+            <span asp-validation-for="Social.Link" class="text-danger"></span>
+        </div>
+        <input type="hidden" asp-for="Social.Id"/>
+        <button type="submit" class="btn btn-success col-md-1 mx-auto mb-3">Güncelle</button>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
+

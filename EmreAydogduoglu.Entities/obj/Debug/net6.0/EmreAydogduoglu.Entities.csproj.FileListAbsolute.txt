@@ -1,0 +1,15 @@
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\bin\Debug\net6.0\EmreAydogduoglu.Entities.deps.json
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\bin\Debug\net6.0\EmreAydogduoglu.Entities.dll
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\bin\Debug\net6.0\EmreAydogduoglu.Entities.pdb
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\bin\Debug\net6.0\EmreAydogduoglu.Core.dll
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\bin\Debug\net6.0\EmreAydogduoglu.Core.pdb
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\EmreAydogduoglu.Entities.csproj.AssemblyReference.cache
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\EmreAydogduoglu.Entities.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\EmreAydogduoglu.Entities.AssemblyInfoInputs.cache
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\EmreAydogduoglu.Entities.AssemblyInfo.cs
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\EmreAydogduoglu.Entities.csproj.CoreCompileInputs.cache
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\EmreAydogduoglu.Entities.csproj.CopyComplete
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\EmreAydogduoglu.Entities.dll
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\refint\EmreAydogduoglu.Entities.dll
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\EmreAydogduoglu.Entities.pdb
+D:\Projects\AspNetCore\EmreAydogduoglu\EmreAydogduoglu.Entities\obj\Debug\net6.0\ref\EmreAydogduoglu.Entities.dll

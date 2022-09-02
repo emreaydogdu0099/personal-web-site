@@ -1,0 +1,45 @@
+﻿@model EducationListViewModel
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container p-3">
+    <div class="row pt-4">
+        <div class="col-6">
+            <h2 class="text-danger">Eğitim Listesi</h2>
+        </div>
+        <div class="col-6 text-end">
+            <a asp-area="Admin" asp-controller="Education" asp-action="Add" class="btn btn-success">
+                <i class="bi bi-plus-circle"></i> &nbsp; Eğitim Ekle
+            </a>
+        </div>
+    </div>
+</div>
+
+<div class="container">
+    <table class="table mt-5 table-striped">
+        <thead class="table-dark">
+        <tr>
+            <th>Eğitim Adı</th>
+            <th>Fakülte Adı</th>
+            <th>Bölüm Adı</th>
+            <th></th>
+            <th></th>
+        </tr>
+        </thead>
+        <tbody>
+        @foreach (var education in Model.Educations)
+        {
+            <tr>
+                <td>@education.Name</td>
+                <td>@education.FacultyName</td>
+                <td>@education.DepartmanName</td>
+                <td><a class="btn btn-info btn-sm" asp-area="Admin" asp-controller="Education" asp-action="Update" asp-route-id="@education.Id"><i class="bi bi-pencil-square"></i> Düzenle</a></td>
+                <td><a class="btn btn-danger btn-sm" asp-area="Admin" asp-controller="Education" asp-action="Delete" asp-route-id="@education.Id"><i class="bi bi-trash3"></i> Sil</a></td>
+            </tr>
+        }
+        </tbody>
+    </table>
+</div>

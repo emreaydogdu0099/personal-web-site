@@ -1,0 +1,35 @@
+﻿@model ProjectViewModel
+
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 mb-5 rounded-3 border border-5 border-dark" style="background-color: aliceblue">
+    <h3 class="mb-3 text-sm-center font-monospace fw-bolder p-2">Proje Ekle</h3>
+    <form class="row g-3" asp-area="Admin" asp-controller="Project" asp-action="Add" method="post">
+        <div class="mb-3">
+            <label asp-for="Project.Name" class="form-label">Proje Adı</label>
+            <input asp-for="Project.Name" class="form-control"/>
+            <span asp-validation-for="Project.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Project.Description" class="form-label">Proje Açıklaması</label>
+            <textarea asp-for="Project.Description" rows="10" class="form-control"></textarea>
+            <span asp-validation-for="Project.Description" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Project.Link" class="form-label">Proje Linki</label>
+            <input asp-for="Project.Link" class="form-control"/>
+            <span asp-validation-for="Project.Link" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success col-md-2 mx-auto mb-3">Ekle</button>
+        <a asp-area="Admin" asp-controller="Project" asp-action="Index" class="btn btn-info col-md-2 mx-auto mb-3">Listeye Dön</a>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}

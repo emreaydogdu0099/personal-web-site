@@ -1,0 +1,14 @@
+﻿@model PersonViewModel
+
+<section class="resume-section" id="about">
+    <div class="resume-section-content">
+        <h1 class="mb-0">
+            @Model.Person.FirstName
+            <span class="text-primary">@Model.Person.LastName</span>
+        </h1>
+        <div class="subheading mb-5">
+            @Model.Person.Title
+        </div>
+        <p class="lead mb-5">@Model.Person.About</p>
+    </div>
+</section>

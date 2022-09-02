@@ -1,0 +1,46 @@
+﻿@model EducationViewModel
+
+@{
+    ViewData["Title"] = "Ekle";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5 mb-5 rounded-3 border border-5 border-dark" style="background-color: aliceblue">
+    <h3 class="mb-3 text-sm-center font-monospace fw-bolder p-2">Eğitim Ekle</h3>
+    <form class="row g-3" asp-area="Admin" asp-controller="Education" asp-action="Add" method="post">
+        <div class="mb-3">
+            <label asp-for="Education.Name" class="form-label">Eğitim Adı</label>
+            <input asp-for="Education.Name" type="text" class="form-control"/>
+            <span asp-validation-for="Education.Name" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Education.FacultyName" class="form-label">Fakülte Adı</label>
+            <input asp-for="Education.FacultyName" type="text" class="form-control">
+            <span asp-validation-for="Education.FacultyName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Education.DepartmanName" class="form-label">Bölüm Adı</label>
+            <input asp-for="Education.DepartmanName" type="text" class="form-control"/>
+            <span asp-validation-for="Education.DepartmanName" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Education.StartDate" class="form-label">Eğitim Başlama Tarihi</label>
+            <input asp-for="Education.StartDate" type="date" class="form-control"/>
+            <span asp-validation-for="Education.StartDate" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Education.FinishDate" class="form-label">Eğitim Bitiş Tarihi</label>
+            <input asp-for="Education.FinishDate" type="date" class="form-control"/>
+            <span asp-validation-for="Education.FinishDate" class="text-danger"></span>
+        </div>
+        <button type="submit" class="btn btn-success col-md-2 mx-auto mb-3">Ekle</button>
+        <a asp-area="Admin" asp-controller="Education" asp-action="Index" class="btn btn-info col-md-2 mx-auto mb-3">Listeye Dön</a>
+    </form>
+</div>
+
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
+
